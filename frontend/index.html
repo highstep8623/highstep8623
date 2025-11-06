@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RenovaHub Marketplace</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <h1>RenovaHub</h1>
+      <p>Your trusted two-sided marketplace for home improvement projects.</p>
+      <div class="hero__actions">
+        <button id="cta-homeowner">I'm a Homeowner</button>
+        <button id="cta-contractor" class="secondary">I'm a Contractor</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="cards" id="tier-overview">
+      <article>
+        <h2>Homeowner Plans</h2>
+        <ul>
+          <li><strong>Basic:</strong> 1 project, 3 quotes, messaging, reviews.</li>
+          <li><strong>Plus:</strong> Unlimited quotes, project tools, priority placement.</li>
+          <li><strong>Pro:</strong> Advanced contractor search, milestone tracking.</li>
+          <li><strong>Premium:</strong> Concierge support, extended warranty options.</li>
+        </ul>
+      </article>
+      <article>
+        <h2>Contractor Plans</h2>
+        <ul>
+          <li><strong>Starter:</strong> Limited bids, standard listing.</li>
+          <li><strong>Growth:</strong> Featured placement, more bids, analytics.</li>
+          <li><strong>Elite:</strong> Unlimited bids, conversion analytics, priority support.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="dashboard" id="auth-section">
+      <div class="panel">
+        <h2>Register</h2>
+        <form id="register-form">
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Password<input type="password" name="password" required /></label>
+          <label>Role
+            <select name="role">
+              <option value="homeowner">Homeowner</option>
+              <option value="contractor">Contractor</option>
+            </select>
+          </label>
+          <label>Name / Business<input type="text" name="name" placeholder="Full name or business" /></label>
+          <button type="submit">Create account</button>
+        </form>
+      </div>
+      <div class="panel">
+        <h2>Login</h2>
+        <form id="login-form">
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Password<input type="password" name="password" required /></label>
+          <button type="submit">Sign in</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="dashboard" id="homeowner-dashboard" hidden>
+      <div class="panel">
+        <h2>Homeowner Dashboard</h2>
+        <div id="homeowner-summary"></div>
+      </div>
+      <div class="panel">
+        <h3>Post a Project</h3>
+        <form id="project-form">
+          <label>Title<input name="title" required /></label>
+          <label>Type<input name="project_type" placeholder="Kitchen remodel" /></label>
+          <label>Description<textarea name="description" required></textarea></label>
+          <label>Budget Min<input type="number" step="0.01" name="budget_min" /></label>
+          <label>Budget Max<input type="number" step="0.01" name="budget_max" /></label>
+          <label>Desired Start Date<input type="date" name="desired_start_date" /></label>
+          <label>Location<input name="location" /></label>
+          <button type="submit">Publish Project</button>
+        </form>
+      </div>
+      <div class="panel">
+        <h3>My Projects</h3>
+        <ul id="homeowner-projects" class="list"></ul>
+      </div>
+      <div class="panel">
+        <h3>Quotes</h3>
+        <ul id="homeowner-quotes" class="list"></ul>
+      </div>
+    </section>
+
+    <section class="dashboard" id="contractor-dashboard" hidden>
+      <div class="panel">
+        <h2>Contractor Dashboard</h2>
+        <div id="contractor-summary"></div>
+      </div>
+      <div class="panel">
+        <h3>Available Projects</h3>
+        <ul id="contractor-projects" class="list"></ul>
+      </div>
+      <div class="panel">
+        <h3>Submitted Quotes</h3>
+        <ul id="contractor-quotes" class="list"></ul>
+      </div>
+    </section>
+
+    <section class="cards" id="seo-content">
+      <article>
+        <h2>Why RenovaHub?</h2>
+        <p>We pair data-driven matching with curated professionals to help homeowners complete renovations on time and on budget.</p>
+      </article>
+      <article>
+        <h2>Resources</h2>
+        <p>Visit our blog for case studies, project checklists, and expert guidance on planning your next remodel.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> RenovaHub. All rights reserved.</p>
+    <nav>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="#">Support</a>
+    </nav>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
